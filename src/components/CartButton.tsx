@@ -1,7 +1,7 @@
-import img from "../image/istockphoto-1206806317-612x612.jpg";
 import { useContext } from "react";
-import { CartPropType, EachProductType } from "../type/type";
+import img from "../image/istockphoto-1206806317-612x612.jpg";
 import { UserContext } from "../page/HomePage";
+import { CartPropType, EachProductType } from "../type/type";
 
 function CartButton({ product }: CartPropType) {
   const cartInfo = useContext(UserContext);
@@ -20,6 +20,7 @@ function CartButton({ product }: CartPropType) {
     const newCart = cart.filter(
       (element: EachProductType) => element.id !== product.id
     );
+
     cartInfo?.setItemsInCart(newCart);
     localStorage.setItem("cart", JSON.stringify(newCart));
   };

@@ -1,6 +1,6 @@
-import { EachProductType, ProductComponentPropType } from "../type/type";
 import { useContext } from "react";
 import { UserContext } from "../page/HomePage";
+import { EachProductType, ProductComponentPropType } from "../type/type";
 import CartButton from "./CartButton";
 
 function Products({ data, isLoading, isError }: ProductComponentPropType) {

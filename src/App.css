@@ -64,6 +64,9 @@
   .cart-items{
     width: 50%;
   }
+  .head-name{
+    margin-left: 20px;
+  }
 
 }
 

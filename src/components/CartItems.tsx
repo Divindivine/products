@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
-import { CartItemsPropType, EachProductType } from "../type/type";
+import { useContext } from "react";
 import { UserContext } from "../page/HomePage";
+import { CartItemsPropType, EachProductType } from "../type/type";
 
 function CartItems({ setCartClicked, cartItems }: CartItemsPropType) {
   const cartInfo = useContext(UserContext);
