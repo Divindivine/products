@@ -41,7 +41,7 @@ function Products({ data, isLoading, isError }: ProductComponentPropType) {
                 backgroundSize: "cover",
               }}
             ></div>
-            <span className="text-[20px] text-left h-[25px] truncate">
+            <span className="text-[20px] text-left font-bold h-[25px] truncate">
               {product.title}
             </span>
             <div className="flex justify-between items-center">

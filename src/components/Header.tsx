@@ -16,15 +16,17 @@ function Header({ data }: HeaderPropType) {
         onChange={(e) => cartInfo?.setInputString(e.target.value)}
       />
       <span className="text-[40px]">Products</span>
+      <div className="flex gap-[5px] items-center pt-[10px]">
       <div className="h-[50px] relative" onClick={() => cartToggle()}>
         <img className="w-[50px] h-[50px]" src={img} alt="" />
-        <span className="absolute bottom-[40px] right-[0px] text-[20px] text-white bg-[#AA0000] px-[5px] rounded-full">
+        <span className="absolute bottom-[40px] right-[0px] text-[20px] font-bold text-white bg-[#AA0000] px-[10px] rounded-full">
           {cartInfo?.itemsInCart.length}
         </span>
       </div>
       {cartClicked && (
         <CartItems data={data} cartItems={cartInfo?.itemsInCart} />
       )}
+      </div>
     </div>
   );
 }
