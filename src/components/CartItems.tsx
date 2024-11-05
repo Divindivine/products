@@ -23,7 +23,7 @@ function CartItems({ setCartClicked, cartItems }: CartItemsPropType) {
     setTimeout(() => alert("thank You See You Next Time"), 1000);
   };
   return (
-    <div className="cart-items w-1/5 max-h-[600px] bg-white absolute right-[20px] top-[85px] z-10 border-[3px] border-black flex flex-col text-black p-[10px] gap-[30px] overflow-y-auto">
+    <div className="cart-items w-1/5 max-h-[600px] bg-white absolute right-[20px] top-[85px] z-10 border-[3px] border-black flex flex-col text-black p-[10px] gap-[30px] overflow-y-auto min-w-[400px]">
       {cartItems?.length ? (
         cartItems.map((product: EachProductType) => (
           <div

@@ -98,10 +98,16 @@
     height: 250px;
   }
   .cart-items{
-    width: 60%;
+    width: 80%;
   }
   .cart-and-input{
     gap: 10px;
   }
 
+}
+
+@media screen and (max-width: 450px) {
+  .cart-items{
+    left: 80px;
+  }
 }
