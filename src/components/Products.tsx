@@ -25,15 +25,15 @@ function Products({ data, isLoading, isError }: ProductComponentPropType) {
   });
 
   return (
-    <div className="flex flex-wrap w-full justify-center items-center gap-[30px]">
+    <div className=" flex flex-wrap w-full justify-center items-center gap-[30px]">
       {filterdData.length !== 0 ? (
         filterdData.map((product: EachProductType) => (
           <div
             key={product.id}
-            className="w-1/6 flex flex-col p-[30px] border-[2px]"
+            className="products w-1/6 flex flex-col p-[30px] border-[2px]"
           >
             <div
-              className="w-full h-[300px]"
+              className="product-image w-full h-[300px]"
               style={{
                 backgroundImage: `url(${product.image})`,
                 backgroundRepeat: "no-repeat",

@@ -29,10 +29,11 @@ export type ProductComponentPropType = {
 };
 
 export type HeaderPropType = {
-  data: any;
+  cartClicked: boolean,
+  setCartClicked: React.Dispatch<React.SetStateAction<boolean>>
 };
 
 export type CartItemsPropType = {
-  data: any;
+  setCartClicked:  React.Dispatch<React.SetStateAction<boolean>>
   cartItems: EachProductType[] | undefined;
 };

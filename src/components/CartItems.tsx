@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { CartItemsPropType, EachProductType } from "../type/type";
 import { UserContext } from "../page/HomePage";
 
-function CartItems({ data, cartItems }: CartItemsPropType) {
+function CartItems({ setCartClicked, cartItems }: CartItemsPropType) {
   const cartInfo = useContext(UserContext);
   const cartString = localStorage.getItem("cart");
   const cart = cartString ? JSON.parse(cartString) : [];
@@ -19,12 +19,11 @@ function CartItems({ data, cartItems }: CartItemsPropType) {
     const newArr: EachProductType[] = [];
     localStorage.setItem("cart", JSON.stringify(newArr));
     cartInfo?.setItemsInCart(newArr);
-    setTimeout(()=>
-      alert("thank You See You Next Time"),1000
-    )
+    setCartClicked(false);
+    setTimeout(() => alert("thank You See You Next Time"), 1000);
   };
   return (
-    <div className="w-[400px] max-h-[600px] bg-white absolute right-[300px] top-[30px] z-10 border-[3px] border-black flex flex-col text-black p-[10px] gap-[30px] overflow-y-auto">
+    <div className="cart-items w-1/5 max-h-[600px] bg-white absolute right-[20px] top-[85px] z-10 border-[3px] border-black flex flex-col text-black p-[10px] gap-[30px] overflow-y-auto">
       {cartItems?.length ? (
         cartItems.map((product: EachProductType) => (
           <div

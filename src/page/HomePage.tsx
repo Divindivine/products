@@ -16,15 +16,19 @@ function HomePage() {
     queryKey: ["products"],
     queryFn: getProducts,
   });
+  const [cartClicked, setCartClicked] = useState(false);
   return (
     <UserContext.Provider
       value={{ itemsInCart, setItemsInCart, inputString, setInputString }}
     >
       <div className="flex flex-col bg-[#B9D9EB]">
         <div className="h-[100px] w-full flex justify-center items-center">
-          <Header data={data} />
+          <Header cartClicked={cartClicked} setCartClicked={setCartClicked} />
         </div>
-        <div className="w-full p-[20px] flex justify-center items-center">
+        <div
+          className="w-full p-[20px] flex justify-center items-center"
+          onClick={() => setCartClicked(false)}
+        >
           <Products data={data} isLoading={isLoading} isError={isError} />
         </div>
       </div>
