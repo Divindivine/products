@@ -15,8 +15,8 @@ function Header({ data }: HeaderPropType) {
         placeholder="search..."
         onChange={(e) => cartInfo?.setInputString(e.target.value)}
       />
-      <span className="text-[40px]">Products</span>
-      <div className="flex gap-[5px] items-center pt-[10px]">
+      <span className="text-[40px] font-bold underline">Products</span>
+      <div className="flex gap-[5px] items-center pt-[10px] w-1/3">
       <div className="h-[50px] relative" onClick={() => cartToggle()}>
         <img className="w-[50px] h-[50px]" src={img} alt="" />
         <span className="absolute bottom-[40px] right-[0px] text-[20px] font-bold text-white bg-[#AA0000] px-[10px] rounded-full">

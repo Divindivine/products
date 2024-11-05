@@ -17,7 +17,7 @@ export type CartPropType = {
 
 export type contextPropType = {
   itemsInCart: EachProductType[];
-  setItemsInCart: React.Dispatch<React.SetStateAction<number>>;
+  setItemsInCart: React.Dispatch<any>;
   inputString: string;
   setInputString: React.Dispatch<React.SetStateAction<string>>;
 };
