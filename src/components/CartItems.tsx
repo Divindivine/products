@@ -19,7 +19,9 @@ function CartItems({ data, cartItems }: CartItemsPropType) {
     const newArr: EachProductType[] = [];
     localStorage.setItem("cart", JSON.stringify(newArr));
     cartInfo?.setItemsInCart(newArr);
-    alert("thankyou see you next time");
+    setTimeout(()=>
+      alert("thank You See You Next Time"),1000
+    )
   };
   return (
     <div className="w-[400px] max-h-[600px] bg-white absolute right-[300px] top-[30px] z-10 border-[3px] border-black flex flex-col text-black p-[10px] gap-[30px] overflow-y-auto">
