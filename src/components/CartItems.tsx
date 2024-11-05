@@ -6,6 +6,8 @@ function CartItems({ data, cartItems }: CartItemsPropType) {
   const cartInfo = useContext(UserContext);
   const cartString = localStorage.getItem("cart");
   const cart = cartString ? JSON.parse(cartString) : [];
+  let total: number = 0;
+  cartItems?.map((product: EachProductType) => (total += product.price));
   const removeFromCart = (product: EachProductType) => {
     const newCart = cart.filter(
       (element: EachProductType) => element.id !== product.id
@@ -17,6 +19,7 @@ function CartItems({ data, cartItems }: CartItemsPropType) {
     const newArr: EachProductType[] = [];
     localStorage.setItem("cart", JSON.stringify(newArr));
     cartInfo?.setItemsInCart(newArr);
+    alert("thankyou see you next time");
   };
   return (
     <div className="w-[400px] max-h-[600px] bg-white absolute right-[300px] top-[30px] z-10 border-[3px] border-black flex flex-col text-black p-[10px] gap-[30px] overflow-y-auto">
@@ -52,13 +55,16 @@ function CartItems({ data, cartItems }: CartItemsPropType) {
         <span className="text-[25px]">No products added to cart</span>
       )}
       {cartItems?.length ? (
-        <div className="w-full flex items-center justify center ">
+        <div className="w-full flex items-center justify-between">
           <button
             className="bg-black text-white font-bold rounded-[8px] p-[10px]"
             onClick={() => buyProducts()}
           >
             Buy now
           </button>
+          <span className="text-[20px]">
+            total: <span className="font-bold text-[24px]">${total}</span>
+          </span>
         </div>
       ) : (
         <span>Add product to cart and checkout</span>
