@@ -11,7 +11,7 @@ function Header({ cartClicked, setCartClicked }: HeaderPropType) {
     <div className="h-[100px] w-full flex items-center justify-between px-[10px]">
      
       <span className="text-[40px] font-bold underline">Products</span>
-      <div className="flex gap-[100px] items-center pt-[10px] ">
+      <div className="cart-and-input flex gap-[100px] items-center pt-[10px] ">
      
       <div className="h-[50px] relative" onClick={() => cartToggle()}>
         <img className="w-[50px] h-[50px]" src={img} alt="" />

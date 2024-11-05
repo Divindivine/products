@@ -21,8 +21,8 @@ function HomePage() {
     <UserContext.Provider
       value={{ itemsInCart, setItemsInCart, inputString, setInputString }}
     >
-      <div className="flex flex-col bg-[#B9D9EB]">
-        <div className="h-[100px] w-full flex justify-center items-center">
+      <div className="flex flex-col bg-[#B9D9EB] min-w-[500px]">
+        <div className="h-[100px] w-full flex justify-center items-center min-w-[500px]">
           <Header cartClicked={cartClicked} setCartClicked={setCartClicked} />
         </div>
         <div
