@@ -30,34 +30,37 @@ function Products({ data, isLoading, isError }: ProductComponentPropType) {
         filterdData.map((product: EachProductType) => (
           <div
             key={product.id}
-            className="products w-1/6 flex flex-col p-[30px] border-[2px]"
+            className="products w-1/6 flex flex-col border-[4px] border-black rounded-[10px] bg-white p-[20px] hover:px-[10px] hover:font-serif"
           >
-            <div
-              className="product-image w-full h-[300px]"
-              style={{
-                backgroundImage: `url(${product.image})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-              }}
-            ></div>
-            <span className="text-[20px] text-left font-bold h-[25px] truncate">
-              {product.title}
-            </span>
-            <div className="flex justify-between items-center">
-              <span className="text-left">
-                price: <span className="text-[22px]">${product.price}</span>
+            <div className=" flex flex-col">
+              {" "}
+              <div
+                className="product-image w-full h-[300px] rounded-[10px] border-[2px] border-black"
+                style={{
+                  backgroundImage: `url(${product.image})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}
+              ></div>
+              <span className="text-[20px] text-left font-bold h-[25px] truncate">
+                {product.title}
               </span>
-              <div className="flex flex-col">
-                <span className="text-slate-500">
-                  rating: {product.rating.rate}
+              <div className="flex justify-between items-center">
+                <span className="text-left">
+                  price: <span className="text-[22px]">${product.price}</span>
                 </span>
-                <span className="text-slate-500">
-                  count: {product.rating.count}
-                </span>
+                <div className="flex flex-col">
+                  <span className="text-slate-500">
+                    rating: {product.rating.rate}
+                  </span>
+                  <span className="text-slate-500">
+                    count: {product.rating.count}
+                  </span>
+                </div>
               </div>
+              <CartButton product={product} />
             </div>
-            <CartButton product={product} />
           </div>
         ))
       ) : (

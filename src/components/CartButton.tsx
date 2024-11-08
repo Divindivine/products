@@ -30,14 +30,14 @@ function CartButton({ product }: CartPropType) {
 
       {productInCart ? (
         <button
-          className="bg-black text-white p-[5px] text-[18px] font-semibold rounded-[8px]"
+          className="bg-black text-white p-[5px] text-[18px] font-semibold rounded-[8px] font-sans"
           onClick={() => removeFromCart(product)}
         >
           remove from cart
         </button>
       ) : (
         <button
-          className="bg-black text-white p-[5px] text-[18px] font-semibold rounded-[8px]"
+          className="bg-black text-white p-[5px] text-[18px] font-semibold rounded-[8px] font-sans"
           onClick={() => addToCart(product)}
         >
           Add to Cart
